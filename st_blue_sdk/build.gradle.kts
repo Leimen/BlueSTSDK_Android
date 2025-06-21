@@ -24,6 +24,7 @@ android {
 
     defaultConfig {
         minSdk = 26
+        manifestPlaceholders["appAuthRedirectScheme"] = "com.example.myapplication"
     }
 
     hilt {
@@ -107,9 +108,9 @@ android {
         arg("room.generateKotlin", "true")
     }
 
-    buildFeatures {
-        buildConfig = true
-    }
+//    buildFeatures {
+//        buildConfig = true
+//    }
 }
 
 dependencies {
