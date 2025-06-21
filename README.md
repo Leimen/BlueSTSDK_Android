@@ -35,3 +35,7 @@ So:
 
    st_opus/build/assemble
    st_opus/publishing/publishToMavenLocal
+
+3) use bash
+   ./gradlew :st_blue_sdk:publishToMavenLocal 
+   ./gradlew :st_opus:publishToMavenLocal
