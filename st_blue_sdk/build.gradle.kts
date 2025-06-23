@@ -40,17 +40,20 @@ android {
             buildConfigField(
                 type = "String",
                 name = "BLUESTSDK_DB_BASE_URL",
-                value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/blesensor_%s/bluestsdkv2/\""
+                //value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/blesensor_%s/bluestsdkv2/\""
+                value = "\"https://raw.githubusercontent.com/Leimen/appconfig/blesensor_%s/bluestsdkv2/\""
             )
             buildConfigField(
                 type = "String",
                 name = "DTMI_GITHUB_DB_BASE_URL",
-                value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/%s.expanded.json\""
+                //value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/%s.expanded.json\""
+                value = "\"https://raw.githubusercontent.com/Leimen/appconfig/release/%s.expanded.json\""
             )
             buildConfigField(
                 type = "String",
                 name = "DTMI_GITHUB_DB_BASE_URL_BETA",
-                value = "\"https://raw.githubusercontent.com/SW-Platforms/appconfig/release/%s.expanded.json\""
+                //value = "\"https://raw.githubusercontent.com/SW-Platforms/appconfig/release/%s.expanded.json\""
+                value = "\"https://raw.githubusercontent.com/Leimen/appconfig/release/%s.expanded.json\""
             )
             buildConfigField(
                 type = "String",
@@ -68,17 +71,20 @@ android {
             buildConfigField(
                 type = "String",
                 name = "BLUESTSDK_DB_BASE_URL",
-                value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/blesensor_%s/bluestsdkv2/\""
+                //value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/blesensor_%s/bluestsdkv2/\""
+                value = "\"https://raw.githubusercontent.com/Leimen/appconfig/blesensor_%s/bluestsdkv2/\""
             )
             buildConfigField(
                 type = "String",
                 name = "DTMI_GITHUB_DB_BASE_URL",
-                value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/%s.expanded.json\""
+                //value = "\"https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/%s.expanded.json\""
+                value = "\"https://raw.githubusercontent.com/Leimen/appconfig/release/%s.expanded.json\""
             )
             buildConfigField(
                 type = "String",
                 name = "DTMI_GITHUB_DB_BASE_URL_BETA",
-                value = "\"https://raw.githubusercontent.com/SW-Platforms/appconfig/release/%s.expanded.json\""
+                //value = "\"https://raw.githubusercontent.com/SW-Platforms/appconfig/release/%s.expanded.json\""
+                value = "\"https://raw.githubusercontent.com/Leimen/appconfig/release/%s.expanded.json\""
             )
             buildConfigField(
                 type = "String",
