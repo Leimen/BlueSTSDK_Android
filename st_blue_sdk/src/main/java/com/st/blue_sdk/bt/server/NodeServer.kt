@@ -243,37 +243,37 @@ class NodeServer(
 
             val bleGattChar = descriptor.characteristic
 
-                Log.d(TAG, "Descriptor write request on characteristic: ${bleGattChar.uuid}")
+            Log.d(TAG, "Descriptor write request on characteristic: ${bleGattChar.uuid}")
 
-                val bleService = bleGattChar.service.uuid
-                val bleCharacteristic = bleGattChar.uuid
-                val isEnabled =
-                    value.contentEquals(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE)
+            val bleService = bleGattChar.service.uuid
+            val bleCharacteristic = bleGattChar.uuid
+            val isEnabled =
+                value.contentEquals(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE)
 
-                if (exportedServicesWithFeatures.containsKey(bleService)) {
-                    val features = exportedServicesWithFeatures[bleService] ?: emptyList()
+            if (exportedServicesWithFeatures.containsKey(bleService)) {
+                val features = exportedServicesWithFeatures[bleService] ?: emptyList()
 
-                    if (features.mapNotNull { it.uuid }.contains(bleCharacteristic)) {
-                        val oldOne =
-                            exportedServicesWithFeatures.remove(bleService) ?: emptyList()
-                        val newOne = mutableListOf<ExportedFeature>()
-                        oldOne.forEach {
-                            if (it.uuid == bleCharacteristic) {
-                                newOne.add(it.copy(isEnabled))
-                            } else {
-                                newOne.add(it)
-                            }
+                if (features.mapNotNull { it.uuid }.contains(bleCharacteristic)) {
+                    val oldOne =
+                        exportedServicesWithFeatures.remove(bleService) ?: emptyList()
+                    val newOne = mutableListOf<ExportedFeature>()
+                    oldOne.forEach {
+                        if (it.uuid == bleCharacteristic) {
+                            newOne.add(it.copy(isEnabled))
+                        } else {
+                            newOne.add(it)
                         }
-                        exportedServicesWithFeatures[bleService] = newOne
                     }
+                    exportedServicesWithFeatures[bleService] = newOne
                 }
+            }
 
-                nodeEventsSharedFlow.tryEmit(
-                    NodeEvents.NotificationStateChange(
-                        bleGattChar.uuid,
-                        isEnabled
-                    )
+            nodeEventsSharedFlow.tryEmit(
+                NodeEvents.NotificationStateChange(
+                    bleGattChar.uuid,
+                    isEnabled
                 )
+            )
 
 
             if (responseNeeded) {
